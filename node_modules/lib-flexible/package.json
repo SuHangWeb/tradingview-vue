@@ -1,0 +1,14 @@
+{
+  "name": "lib-flexible",
+  "version": "0.3.2",
+  "description": "移动端适配解决方案",
+  "main": "flexible.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "适配"
+  ],
+  "author": "",
+  "license": "ISC"
+}

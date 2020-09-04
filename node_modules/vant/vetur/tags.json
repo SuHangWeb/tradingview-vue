@@ -1,0 +1,1076 @@
+{
+  "van-address-edit": {
+    "attributes": [
+      "area-list",
+      "area-columns-placeholder",
+      "area-placeholder",
+      "address-info",
+      "search-result",
+      "show-postal",
+      "show-delete",
+      "show-set-default",
+      "show-search-result",
+      "show-area",
+      "show-detail",
+      "disable-area",
+      "save-button-text",
+      "delete-button-text",
+      "detail-rows",
+      "detail-maxlength",
+      "is-saving",
+      "is-deleting",
+      "tel-validator",
+      "tel-maxlength",
+      "postal-validator",
+      "validator"
+    ]
+  },
+  "van-button": {
+    "attributes": [
+      "type",
+      "size",
+      "text",
+      "color",
+      "icon",
+      "icon-prefix",
+      "tag",
+      "native-type",
+      "block",
+      "plain",
+      "square",
+      "round",
+      "disabled",
+      "hairline",
+      "loading",
+      "loading-text",
+      "loading-type",
+      "loading-size",
+      "url",
+      "to",
+      "replace"
+    ]
+  },
+  "van-action-sheet": {
+    "attributes": [
+      "v-model (value)",
+      "actions",
+      "title",
+      "cancel-text",
+      "description",
+      "close-icon",
+      "duration",
+      "round",
+      "overlay",
+      "lock-scroll",
+      "lazy-render",
+      "close-on-popstate",
+      "close-on-click-action",
+      "close-on-click-overlay",
+      "safe-area-inset-bottom",
+      "get-container"
+    ]
+  },
+  "van-area": {
+    "attributes": [
+      "value",
+      "title",
+      "confirm-button-text",
+      "cancel-button-text",
+      "area-list",
+      "columns-placeholder",
+      "loading",
+      "item-height",
+      "columns-num",
+      "visible-item-count",
+      "swipe-duration",
+      "is-oversea-code"
+    ]
+  },
+  "van-address-list": {
+    "attributes": [
+      "v-model",
+      "list",
+      "disabled-list",
+      "disabled-text",
+      "switchable",
+      "add-button-text",
+      "default-tag-text"
+    ]
+  },
+  "van-calendar": {
+    "attributes": [
+      "type",
+      "title",
+      "color",
+      "min-date",
+      "max-date",
+      "default-date",
+      "row-height",
+      "formatter",
+      "poppable",
+      "lazy-render",
+      "show-mark",
+      "show-title",
+      "show-subtitle",
+      "show-confirm",
+      "confirm-text",
+      "confirm-disabled-text",
+      "first-day-of-week",
+      "v-model",
+      "position",
+      "round",
+      "close-on-popstate",
+      "close-on-click-overlay",
+      "safe-area-inset-bottom",
+      "get-container",
+      "max-range",
+      "range-prompt",
+      "allow-same-day",
+      "max-range",
+      "range-prompt"
+    ]
+  },
+  "van-card": {
+    "attributes": [
+      "thumb",
+      "title",
+      "desc",
+      "tag",
+      "num",
+      "price",
+      "origin-price",
+      "centered",
+      "currency",
+      "thumb-link",
+      "lazy-load"
+    ]
+  },
+  "van-cell": {
+    "attributes": [
+      "title",
+      "border",
+      "title",
+      "value",
+      "label",
+      "size",
+      "icon",
+      "icon-prefix",
+      "url",
+      "to",
+      "border",
+      "replace",
+      "clickable",
+      "is-link",
+      "required",
+      "center",
+      "arrow-direction",
+      "title-style",
+      "title-class",
+      "value-class",
+      "label-class"
+    ]
+  },
+  "van-checkbox": {
+    "attributes": [
+      "v-model (value)",
+      "name",
+      "shape",
+      "disabled",
+      "label-disabled",
+      "label-position",
+      "icon-size",
+      "checked-color",
+      "bind-group",
+      "v-model (value)",
+      "disabled",
+      "max",
+      "direction",
+      "icon-size",
+      "checked-color"
+    ]
+  },
+  "van-circle": {
+    "attributes": [
+      "v-model",
+      "rate",
+      "size",
+      "color",
+      "layer-color",
+      "fill",
+      "speed",
+      "text",
+      "stroke-width",
+      "stroke-linecap",
+      "clockwise"
+    ]
+  },
+  "van-layout": {
+    "attributes": [
+      "type",
+      "gutter",
+      "tag",
+      "justify",
+      "align",
+      "span",
+      "offset",
+      "tag"
+    ]
+  },
+  "van-collapse": {
+    "attributes": [
+      "v-model",
+      "accordion",
+      "border",
+      "name",
+      "icon",
+      "size",
+      "title",
+      "value",
+      "label",
+      "border",
+      "is-link",
+      "disabled",
+      "title-class",
+      "value-class",
+      "label-class"
+    ]
+  },
+  "van-contact": {
+    "attributes": [
+      "type",
+      "name",
+      "tel",
+      "add-text",
+      "v-model",
+      "list",
+      "add-text",
+      "default-tag-text",
+      "contact-info",
+      "is-edit",
+      "is-saving",
+      "is-deleting",
+      "tel-validator",
+      "show-set-default",
+      "set-default-label"
+    ]
+  },
+  "van-count-down": {
+    "attributes": [
+      "time",
+      "format",
+      "auto-start",
+      "millisecond"
+    ]
+  },
+  "van-coupon": {
+    "attributes": [
+      "title",
+      "chosen-coupon",
+      "coupons",
+      "editable",
+      "border",
+      "currency",
+      "v-model",
+      "chosen-coupon",
+      "coupons",
+      "disabled-coupons",
+      "enabled-title",
+      "disabled-title",
+      "exchange-button-text",
+      "exchange-button-loading",
+      "exchange-button-disabled",
+      "exchange-min-length",
+      "displayed-coupon-index",
+      "show-close-button",
+      "close-button-text",
+      "input-placeholder",
+      "show-exchange-bar",
+      "currency",
+      "empty-image",
+      "show-count"
+    ]
+  },
+  "van-datetime-picker": {
+    "attributes": [
+      "type",
+      "title",
+      "confirm-button-text",
+      "cancel-button-text",
+      "show-toolbar",
+      "loading",
+      "filter",
+      "formatter",
+      "columns-order",
+      "item-height",
+      "visible-item-count",
+      "swipe-duration",
+      "min-date",
+      "max-date",
+      "min-hour",
+      "max-hour",
+      "min-minute",
+      "max-minute"
+    ]
+  },
+  "van-dialog": {
+    "attributes": [
+      "v-model",
+      "title",
+      "width",
+      "message",
+      "message-align",
+      "theme",
+      "show-confirm-button",
+      "show-cancel-button",
+      "confirm-button-text",
+      "confirm-button-color",
+      "cancel-button-text",
+      "cancel-button-color",
+      "overlay",
+      "overlay-class",
+      "overlay-style",
+      "close-on-popstate",
+      "close-on-click-overlay",
+      "lazy-render",
+      "lock-scroll",
+      "allow-html",
+      "before-close",
+      "transition",
+      "get-container"
+    ]
+  },
+  "van-divider": {
+    "attributes": [
+      "dashed",
+      "hairline",
+      "content-position"
+    ]
+  },
+  "van-dropdown-menu": {
+    "attributes": [
+      "active-color",
+      "direction",
+      "z-index",
+      "duration",
+      "overlay",
+      "close-on-click-overlay",
+      "close-on-click-outside",
+      "value",
+      "title",
+      "options",
+      "disabled",
+      "lazy-render",
+      "title-class",
+      "get-container"
+    ]
+  },
+  "van-empty": {
+    "attributes": [
+      "image",
+      "description"
+    ]
+  },
+  "van-field": {
+    "attributes": [
+      "v-model (value)",
+      "label",
+      "name",
+      "type",
+      "size",
+      "maxlength",
+      "placeholder",
+      "border",
+      "disabled",
+      "readonly",
+      "colon",
+      "required",
+      "center",
+      "clearable",
+      "clear-trigger",
+      "clickable",
+      "is-link",
+      "autofocus",
+      "show-word-limit",
+      "error",
+      "error-message",
+      "formatter",
+      "format-trigger",
+      "arrow-direction",
+      "label-class",
+      "label-width",
+      "label-align",
+      "input-align",
+      "error-message-align",
+      "autosize",
+      "left-icon",
+      "right-icon",
+      "icon-prefix",
+      "rules"
+    ]
+  },
+  "van-form": {
+    "attributes": [
+      "label-width",
+      "label-align",
+      "input-align",
+      "error-message-align",
+      "validate-trigger",
+      "colon",
+      "validate-first",
+      "scroll-to-error",
+      "show-error",
+      "show-error-message",
+      "submit-on-enter"
+    ]
+  },
+  "van-goods-action": {
+    "attributes": [
+      "safe-area-inset-bottom",
+      "text",
+      "icon",
+      "color",
+      "icon-class",
+      "dot",
+      "badge",
+      "info",
+      "url",
+      "to",
+      "replace",
+      "text",
+      "type",
+      "color",
+      "icon",
+      "disabled",
+      "loading",
+      "url",
+      "to",
+      "replace"
+    ]
+  },
+  "van-grid": {
+    "attributes": [
+      "column-num",
+      "icon-size",
+      "gutter",
+      "border",
+      "center",
+      "square",
+      "clickable",
+      "direction",
+      "text",
+      "icon",
+      "icon-prefix",
+      "dot",
+      "badge",
+      "info",
+      "url",
+      "to",
+      "replace"
+    ]
+  },
+  "van-icon": {
+    "attributes": [
+      "name",
+      "dot",
+      "badge",
+      "info",
+      "color",
+      "size",
+      "class-prefix",
+      "tag"
+    ]
+  },
+  "van-image": {
+    "attributes": [
+      "src",
+      "fit",
+      "alt",
+      "width",
+      "height",
+      "radius",
+      "round",
+      "lazy-load",
+      "show-error",
+      "show-loading",
+      "error-icon",
+      "loading-icon"
+    ]
+  },
+  "van-image-preview": {
+    "attributes": [
+      "images",
+      "start-position",
+      "swipe-duration",
+      "show-index",
+      "show-indicators",
+      "loop",
+      "async-close",
+      "close-on-popstate",
+      "class-name",
+      "max-zoom",
+      "min-zoom",
+      "closeable",
+      "close-icon",
+      "close-icon-position",
+      "get-container"
+    ]
+  },
+  "van-index-bar": {
+    "attributes": [
+      "index-list",
+      "z-index",
+      "sticky",
+      "sticky-offset-top",
+      "highlight-color",
+      "index"
+    ]
+  },
+  "van-lazyload": {
+    "attributes": []
+  },
+  "van-list": {
+    "attributes": [
+      "v-model",
+      "finished",
+      "error",
+      "offset",
+      "loading-text",
+      "finished-text",
+      "error-text",
+      "immediate-check",
+      "direction"
+    ]
+  },
+  "van-loading": {
+    "attributes": [
+      "color",
+      "type",
+      "size",
+      "text-size",
+      "vertical"
+    ]
+  },
+  "van-国际化": {
+    "attributes": []
+  },
+  "van-nav-bar": {
+    "attributes": [
+      "title",
+      "left-text",
+      "right-text",
+      "left-arrow",
+      "border",
+      "fixed",
+      "placeholder",
+      "z-index"
+    ]
+  },
+  "van-notice-bar": {
+    "attributes": [
+      "mode",
+      "text",
+      "color",
+      "background",
+      "left-icon",
+      "delay",
+      "speed",
+      "scrollable",
+      "wrapable"
+    ]
+  },
+  "van-notify": {
+    "attributes": []
+  },
+  "van-number-keyboard": {
+    "attributes": [
+      "v-model (value)",
+      "show",
+      "title",
+      "theme",
+      "maxlength",
+      "transition",
+      "z-index",
+      "extra-key",
+      "close-button-text",
+      "delete-button-text",
+      "close-button-loading",
+      "show-delete-key",
+      "hide-on-click-outside",
+      "get-container",
+      "safe-area-inset-bottom"
+    ]
+  },
+  "van-overlay": {
+    "attributes": [
+      "show",
+      "z-index",
+      "duration",
+      "class-name",
+      "custom-style",
+      "lock-scroll"
+    ]
+  },
+  "van-pagination": {
+    "attributes": [
+      "v-model",
+      "mode",
+      "prev-text",
+      "next-text",
+      "page-count",
+      "total-items",
+      "items-per-page",
+      "show-page-size",
+      "force-ellipses"
+    ]
+  },
+  "van-panel": {
+    "attributes": [
+      "title",
+      "desc",
+      "status",
+      "icon"
+    ]
+  },
+  "van-password-input": {
+    "attributes": [
+      "value",
+      "info",
+      "error-info",
+      "length",
+      "gutter",
+      "mask",
+      "focused"
+    ]
+  },
+  "van-picker": {
+    "attributes": [
+      "columns",
+      "title",
+      "confirm-button-text",
+      "cancel-button-text",
+      "value-key",
+      "toolbar-position",
+      "loading",
+      "show-toolbar",
+      "allow-html",
+      "default-index",
+      "item-height",
+      "visible-item-count",
+      "swipe-duration"
+    ]
+  },
+  "van-popup": {
+    "attributes": [
+      "v-model (value)",
+      "overlay",
+      "position",
+      "overlay-class",
+      "overlay-style",
+      "duration",
+      "round",
+      "lock-scroll",
+      "lazy-render",
+      "close-on-popstate",
+      "close-on-click-overlay",
+      "closeable",
+      "close-icon",
+      "close-icon-position",
+      "transition",
+      "get-container",
+      "safe-area-inset-bottom"
+    ]
+  },
+  "van-progress": {
+    "attributes": [
+      "percentage",
+      "stroke-width",
+      "color",
+      "track-color",
+      "pivot-text",
+      "pivot-color",
+      "text-color",
+      "inactive",
+      "show-pivot"
+    ]
+  },
+  "van-pull-refresh": {
+    "attributes": [
+      "v-model",
+      "pulling-text",
+      "loosing-text",
+      "loading-text",
+      "success-text",
+      "success-duration",
+      "animation-duration",
+      "head-height",
+      "disabled"
+    ]
+  },
+  "van-radio": {
+    "attributes": [
+      "name",
+      "shape",
+      "disabled",
+      "label-disabled",
+      "label-position",
+      "icon-size",
+      "checked-color",
+      "v-model (value)",
+      "disabled",
+      "direction",
+      "icon-size",
+      "checked-color"
+    ]
+  },
+  "van-rate": {
+    "attributes": [
+      "v-model",
+      "count",
+      "size",
+      "gutter",
+      "color",
+      "void-color",
+      "disabled-color",
+      "icon",
+      "void-icon",
+      "icon-prefix",
+      "allow-half",
+      "readonly",
+      "disabled",
+      "touchable"
+    ]
+  },
+  "van-search": {
+    "attributes": [
+      "label",
+      "shape",
+      "background",
+      "maxlength",
+      "placeholder",
+      "clearable",
+      "clear-trigger",
+      "autofocus",
+      "show-action",
+      "action-text",
+      "disabled",
+      "readonly",
+      "error",
+      "input-align",
+      "left-icon",
+      "right-icon"
+    ]
+  },
+  "van-share-sheet": {
+    "attributes": [
+      "options",
+      "title",
+      "cancel-text",
+      "description",
+      "duration",
+      "overlay",
+      "lock-scroll",
+      "lazy-render",
+      "close-on-popstate",
+      "close-on-click-overlay",
+      "safe-area-inset-bottom",
+      "get-container"
+    ]
+  },
+  "van-sidebar": {
+    "attributes": [
+      "v-model",
+      "title",
+      "dot",
+      "badge",
+      "info",
+      "disabled",
+      "url",
+      "to",
+      "replace"
+    ]
+  },
+  "van-skeleton": {
+    "attributes": [
+      "row",
+      "row-width",
+      "title",
+      "avatar",
+      "loading",
+      "animate",
+      "round",
+      "title-width",
+      "avatar-size",
+      "avatar-shape"
+    ]
+  },
+  "van-sku": {
+    "attributes": [
+      "v-model",
+      "sku",
+      "goods",
+      "goods-id",
+      "price-tag",
+      "hide-stock",
+      "hide-quota-text",
+      "hide-selected-text",
+      "stock-threshold",
+      "show-add-cart-btn",
+      "buy-text",
+      "add-cart-text",
+      "quota",
+      "quota-used",
+      "reset-stepper-on-hide",
+      "reset-selected-sku-on-hide",
+      "disable-stepper-input",
+      "close-on-click-overlay",
+      "stepper-title",
+      "custom-stepper-config",
+      "message-config",
+      "get-container",
+      "initial-sku",
+      "show-soldout-sku",
+      "safe-area-inset-bottom",
+      "start-sale-num",
+      "properties",
+      "preview-on-click-image",
+      "show-header-image",
+      "lazy-load"
+    ]
+  },
+  "van-slider": {
+    "attributes": [
+      "value",
+      "max",
+      "min",
+      "step",
+      "bar-height",
+      "button-size",
+      "active-color",
+      "inactive-color",
+      "disabled",
+      "vertical"
+    ]
+  },
+  "van-stepper": {
+    "attributes": [
+      "v-model",
+      "min",
+      "max",
+      "default-value",
+      "step",
+      "name",
+      "input-width",
+      "button-size",
+      "decimal-length",
+      "theme",
+      "placeholder",
+      "integer",
+      "disabled",
+      "disable-plus",
+      "disable-minus",
+      "disable-input",
+      "async-change",
+      "show-plus",
+      "show-minus",
+      "long-press",
+      "allow-empty"
+    ]
+  },
+  "van-steps": {
+    "attributes": [
+      "active",
+      "direction",
+      "active-color",
+      "inactive-color",
+      "active-icon",
+      "inactive-icon"
+    ]
+  },
+  "van-sticky": {
+    "attributes": [
+      "offset-top",
+      "z-index",
+      "container"
+    ]
+  },
+  "van-内置样式": {
+    "attributes": []
+  },
+  "van-submit-bar": {
+    "attributes": [
+      "price",
+      "label",
+      "suffix-label",
+      "text-align",
+      "button-text",
+      "button-type",
+      "button-color",
+      "tip",
+      "tip-icon",
+      "currency",
+      "decimal-length",
+      "disabled",
+      "loading",
+      "safe-area-inset-bottom"
+    ]
+  },
+  "van-swipe": {
+    "attributes": [
+      "autoplay",
+      "duration",
+      "initial-swipe",
+      "width",
+      "height",
+      "loop",
+      "show-indicators",
+      "vertical",
+      "touchable",
+      "stop-propagation",
+      "lazy-render",
+      "indicator-color"
+    ]
+  },
+  "van-swipe-cell": {
+    "attributes": [
+      "name",
+      "left-width",
+      "right-width",
+      "before-close",
+      "disabled",
+      "stop-propagation"
+    ]
+  },
+  "van-switch": {
+    "attributes": [
+      "v-model",
+      "loading",
+      "disabled",
+      "size",
+      "active-color",
+      "inactive-color",
+      "active-value",
+      "inactive-value"
+    ]
+  },
+  "van-switch-cell": {
+    "attributes": [
+      "v-model",
+      "title",
+      "border",
+      "cell-size",
+      "loading",
+      "disabled",
+      "size",
+      "active-color",
+      "inactive-color",
+      "active-value",
+      "inactive-value"
+    ]
+  },
+  "van-tab": {
+    "attributes": [
+      "v-model",
+      "type",
+      "color",
+      "background",
+      "duration",
+      "line-width",
+      "line-height",
+      "animated",
+      "border",
+      "ellipsis",
+      "sticky",
+      "swipeable",
+      "lazy-render",
+      "scrollspy",
+      "offset-top",
+      "swipe-threshold",
+      "title-active-color",
+      "title-inactive-color",
+      "before-change",
+      "title",
+      "disabled",
+      "dot",
+      "badge",
+      "info",
+      "name",
+      "url",
+      "to",
+      "replace",
+      "title-style"
+    ]
+  },
+  "van-tabbar": {
+    "attributes": [
+      "v-model",
+      "fixed",
+      "border",
+      "z-index",
+      "active-color",
+      "inactive-color",
+      "route",
+      "placeholder",
+      "safe-area-inset-bottom",
+      "name",
+      "icon",
+      "icon-prefix",
+      "dot",
+      "badge",
+      "info",
+      "url",
+      "to",
+      "replace"
+    ]
+  },
+  "van-tag": {
+    "attributes": [
+      "type",
+      "size",
+      "color",
+      "plain",
+      "round",
+      "mark",
+      "text-color",
+      "closeable"
+    ]
+  },
+  "van-toast": {
+    "attributes": []
+  },
+  "van-tree-select": {
+    "attributes": [
+      "items",
+      "height",
+      "main-active-index",
+      "active-id",
+      "max",
+      "selected-icon"
+    ]
+  },
+  "van-uploader": {
+    "attributes": [
+      "v-model (fileList)",
+      "accept",
+      "name",
+      "preview-size",
+      "preview-image",
+      "preview-full-image",
+      "preview-options",
+      "multiple",
+      "disabled",
+      "deletable",
+      "show-upload",
+      "lazy-load",
+      "capture",
+      "after-read",
+      "before-read",
+      "before-delete",
+      "max-size",
+      "max-count",
+      "result-type",
+      "upload-text",
+      "image-fit",
+      "upload-icon"
+    ]
+  }
+}

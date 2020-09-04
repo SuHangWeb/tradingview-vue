@@ -1,0 +1,109 @@
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _utils = require("../utils");
+
+var _touch = require("../mixins/touch");
+
+var _loading = _interopRequireDefault(require("../loading"));
+
+var _DeleteIcon = _interopRequireDefault(require("./DeleteIcon"));
+
+var _CollapseIcon = _interopRequireDefault(require("./CollapseIcon"));
+
+var _createNamespace = (0, _utils.createNamespace)('key'),
+    createComponent = _createNamespace[0],
+    bem = _createNamespace[1];
+
+var _default = createComponent({
+  mixins: [_touch.TouchMixin],
+  props: {
+    type: String,
+    text: [Number, String],
+    color: String,
+    wider: Boolean,
+    large: Boolean,
+    loading: Boolean
+  },
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  mounted: function mounted() {
+    this.bindTouchEvent(this.$el);
+  },
+  methods: {
+    onTouchStart: function onTouchStart(event) {
+      // compatible with Vue 2.6 event bubble bug
+      event.stopPropagation();
+      this.touchStart(event);
+      this.active = true;
+    },
+    onTouchMove: function onTouchMove(event) {
+      this.touchMove(event);
+
+      if (this.direction) {
+        this.active = false;
+      }
+    },
+    onTouchEnd: function onTouchEnd(event) {
+      if (this.active) {
+        // eliminate tap delay on safari
+        event.preventDefault();
+        this.active = false;
+        this.$emit('press', this.text, this.type);
+      }
+    },
+    genContent: function genContent() {
+      var h = this.$createElement;
+      var isExtra = this.type === 'extra';
+      var isDelete = this.type === 'delete';
+      var text = this.slots('default') || this.text;
+
+      if (this.loading) {
+        return h(_loading.default, {
+          "class": bem('loading-icon')
+        });
+      }
+
+      if (isDelete) {
+        return text || h(_DeleteIcon.default, {
+          "class": bem('delete-icon')
+        });
+      }
+
+      if (isExtra) {
+        return text || h(_CollapseIcon.default, {
+          "class": bem('collapse-icon')
+        });
+      }
+
+      return text;
+    }
+  },
+  render: function render() {
+    var h = arguments[0];
+    return h("div", {
+      "class": bem('wrapper', {
+        wider: this.wider
+      })
+    }, [h("div", {
+      "attrs": {
+        "role": "button",
+        "tabindex": "0"
+      },
+      "class": bem([this.color, {
+        large: this.large,
+        active: this.active,
+        delete: this.type === 'delete'
+      }])
+    }, [this.genContent()])]);
+  }
+});
+
+exports.default = _default;
