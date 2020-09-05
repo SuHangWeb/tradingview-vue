@@ -31,7 +31,7 @@
 # 使用方法
 
 ```
- <s-tradingview wsUrl="ws://api.bhcoin.club/getContractKline" dom-id="one" class="tradingviewView" />
+ <s-tradingview wsUrl="ws://xxxx" dom-id="one" class="tradingviewView" />
 ```
 
 参数
