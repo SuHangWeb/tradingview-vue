@@ -15,7 +15,8 @@
 │   ├─enabled_features.js   启用的功能
 │   ├─overrides.js          主要配置
 │   ├─loading_screen.js     设置初始化加载条样式
-│   └─studies_overrides.js  柱状图颜色
+│   ├─studies_overrides.js  柱状图颜色
+│   └─tabs.js               切换配置
 ├─mixin                     混入抽离
 │   └─webSocket.js          抽离webSocket方法
 ├─static                    主要静态文件
