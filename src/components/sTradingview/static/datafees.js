@@ -20,13 +20,13 @@ class datafeeds {
 	onReady(callback) {
 		return new Promise((resolve, reject) => {
 			let configuration = this.defaultConfiguration()
-			if(this.self.getConfig) {
+			if (this.self.getConfig) {
 				configuration = Object.assign(this.defaultConfiguration(), this.self.getConfig())
 			}
 			resolve(configuration)
 		}).then(data => callback(data))
 	}
-	
+
 	/**
 	 * 搜索商品
 	 * @param {*String} userInput  用户在商品搜索框中输入的文字。
@@ -35,7 +35,7 @@ class datafeeds {
 	 * @param {*Function} onResultReadyCallback 提供一个匹配用户搜索的商品列表
 	 */
 	searchSymbols(userInput, exchange, symbolType, onResultReadyCallback) {
-		
+
 	}
 
 	/**
@@ -47,7 +47,7 @@ class datafeeds {
 	resolveSymbol(symbolName, onSymbolResolvedCallback, onResolveErrorCallback) {
 		return new Promise((resolve, reject) => {
 			let symbolInfo = this.defaultSymbol()
-			if(this.self.getSymbol) {
+			if (this.self.getSymbol) {
 				symbolInfo = Object.assign(this.defaultSymbol(), this.self.getSymbol(symbolName))
 			}
 			resolve(symbolInfo)

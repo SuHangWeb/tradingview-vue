@@ -9,7 +9,12 @@
       v-model="interval"
       @change="changeTabs"
     >
-      <van-tab v-for="(item,index) in tabsArr" :title="item.name" :name="item.value" :key="index" />
+      <van-tab
+        v-for="(item,index) in tabsArr"
+        :title="item.label"
+        :name="item.resolution"
+        :key="index"
+      />
     </van-tabs>
     <div :id="domId" class="sTradingviewView"></div>
   </div>
@@ -20,6 +25,7 @@ import datafeeds from "./static/datafees.js";
 import config from "./config";
 import tabsConfig from "./config/tabs";
 import { webSocketMixin } from "./mixin/webSocket";
+import $lodash from "lodash";
 export default {
   name: "sTradingview",
   mixins: [webSocketMixin],
@@ -50,7 +56,7 @@ export default {
     return {
       tabsArr: tabsConfig,
       symbol: "LTC_USDT",
-      interval: "1min",
+      interval: "1",
       chart: null,
       initdata: {},
       countDate: 0, //累加条数
@@ -72,30 +78,28 @@ export default {
      */
     changeTabs(e) {
       this.interval = e;
+
+      let chartType = e == "1s" ? 3 : 1;
+
       this.setSymbols();
-      this.chart
-        .chart()
-        .setResolution(this.filter(e), function onReadyCallback(e) {});
+
+      // if (this.interval != e) {
+        this.chart
+          .chart()
+          .setResolution(this.filter(e), function onReadyCallback(e) {});
+      // }
+
       this.webSocket("load");
-      if (e == "1S") {
-        this.chart.activeChart().setChartType(3);
-        this.chart.activeChart().removeAllStudies();
-      } else {
-        this.chart.activeChart().setChartType(1);
-        //检查是否存在MA
-        this.getAllStudiesFun();
-      }
+
+      this.chart.activeChart().setChartType(chartType);
+
+      //MA显示隐藏
+      this.toggleStudies(e);
     },
+
+    //过滤 时段
     filter(time) {
-      if (time == "1S") return "1S";
-      else if (time == "1min") return "1";
-      else if (time == "5min") return "5";
-      else if (time == "15min") return "15";
-      else if (time == "30min") return "30";
-      else if (time == "60min") return "60";
-      else if (time == "1day") return "1D";
-      else if (time == "1week") return "1W";
-      else if (time == "1mon") return "1M";
+      return time == "1s" ? "1" : time;
     },
 
     // 请求数据
@@ -132,7 +136,7 @@ export default {
         minmov2: 0,
         pointvalue: 1,
         fractional: false,
-        //设置周期
+        //设置周期 等于所有时间都是交易时段
         session: "24x7",
         has_intraday: true,
         has_no_volume: false,
@@ -144,21 +148,19 @@ export default {
         //设置精度  100表示保留两位小数   1000三位   10000四位
         pricescale: 100,
         ticker: symbol,
-        //  'supported_resolutions': ['1', '5', '15', '30', '60', '240','1D', '5D', '1W', '1M']
+        supported_resolutions: ["1", "5", "15", "30", "60", "1D", "1W", "1M"],
       };
     },
 
     //设置品信息(重新获取初始数据/推送数据)
     setSymbols() {
       let self = this;
-      self.chart.setSymbol(
-        self.symbol,
-        self.filter(self.interval),
-        function () {
-          self.chart.chart().setVisibleRange(self.initdata);
-          self.chart.chart().executeActionById("timeScaleReset");
-        }
-      );
+      self.chart.setSymbol(self.symbol, self.filter(self.interval), function (
+        e
+      ) {
+        self.chart.chart().setVisibleRange(self.initdata);
+        self.chart.chart().executeActionById("timeScaleReset");
+      });
     },
 
     //卸载K线
@@ -172,6 +174,7 @@ export default {
     //加载K线图插件
     loadChart() {
       let self = this;
+
       this.chart = new widget({
         container_id: self.domId,
         symbol: self.symbol,
@@ -195,8 +198,28 @@ export default {
 
       this.chart.onChartReady(function () {
         //检查是否存在MA
-        self.getAllStudiesFun();
+        self.toggleStudies(self.interval);
       });
+    },
+    /**
+     * 根据状态 显示隐藏 MA
+     * e {string} 时段
+     */
+    toggleStudies(e) {
+      let self = this;
+      if (e == "1s") {
+        self.chart
+          .activeChart()
+          .getAllStudies()
+          .forEach((e) => {
+            if (e.name == "Moving Average") {
+              self.chart.activeChart().removeEntity(e.id);
+            }
+          });
+      } else {
+        //检查是否存在MA
+        this.getAllStudiesFun();
+      }
     },
     //检查是否有 指标MA
     getAllStudiesFun() {
@@ -206,6 +229,7 @@ export default {
         .activeChart()
         .getAllStudies()
         .forEach((e) => {
+          // console.log(e);
           strArr.push(e.name);
         });
       if (JSON.stringify(strArr).indexOf("Moving Average") == -1) {

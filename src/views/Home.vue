@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <s-tradingview wsUrl="ws://xxx" class="tradingviewView" />
+    <s-tradingview wsUrl="ws://api.bhcoin.club/getContractKline" class="tradingviewView" />
   </div>
 </template>
 

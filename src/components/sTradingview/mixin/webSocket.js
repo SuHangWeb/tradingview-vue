@@ -2,6 +2,7 @@ import $lodash from 'lodash';
 export const webSocketMixin = {
     data() {
         return {
+            isWebsock: false,
             websockTime: "", //心跳
         }
     },
@@ -23,6 +24,7 @@ export const webSocketMixin = {
             } else {
                 try {
                     self.websock.close();
+                    this.isWebsock = false;
                 } catch (e) { }
                 // 实例化socket
                 self.websock = new WebSocket(self.wsUrl);
@@ -38,6 +40,7 @@ export const webSocketMixin = {
         websockOpen(e) {
             const self = this;
             //   console.log("socket连接成功");
+            this.isWebsock = true;
             this.websockSend();
             setTimeout(function () {
                 self.websockHeartbeat();
@@ -45,13 +48,16 @@ export const webSocketMixin = {
         },
         //发送消息
         websockSend(msg) {
+            const self = this;
             if (msg) {
-                this.websock.send(msg);
+                if (self.isWebsock) {
+                    self.websock.send(msg);
+                }
             } else {
-                this.websock.send(
+                self.websock.send(
                     JSON.stringify({
                         req: "contractkline",
-                        sub: `contract:KLineData:BTCUSDT:kline_${$lodash.find(this.tabsArr, { value: this.interval }).websockSend}_26`,
+                        sub: `contract:KLineData:BTCUSDT:kline_${$lodash.find(self.tabsArr, { resolution: self.interval }).websockSend}_26`,
                     })
                 );
             }
@@ -104,6 +110,7 @@ export const webSocketMixin = {
         websockClose() {
             // console.log("socket已经关闭");
             clearInterval(this.websockTime);
+            this.isWebsock = false;
         },
     }
 }
