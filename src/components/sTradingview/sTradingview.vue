@@ -48,6 +48,7 @@ export default {
   data() {
     return {
       tabsArr: [
+        //https://www.tradingview.com/blog/cn/alerts-for-second-resolutions-16646/
         // {
         //   name: "分时",
         //   value: "1S",
