@@ -1,10 +1,9 @@
 export default [
-    //https://www.tradingview.com/blog/cn/alerts-for-second-resolutions-16646/
-    // {
-    //   name: "分时",
-    //   value: "1S",
-    //   websockSend: "0",
-    // },
+    {
+        name: "分时",
+        value: "1S",
+        websockSend: "0",
+    },
     {
         name: "1分钟",
         value: "1min",

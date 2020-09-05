@@ -77,6 +77,14 @@ export default {
         .chart()
         .setResolution(this.filter(e), function onReadyCallback(e) {});
       this.webSocket("load");
+      if (e == "1S") {
+        this.chart.activeChart().setChartType(3);
+        this.chart.activeChart().removeAllStudies();
+      } else {
+        this.chart.activeChart().setChartType(1);
+        //检查是否存在MA
+        this.getAllStudiesFun();
+      }
     },
     filter(time) {
       if (time == "1S") return "1S";
@@ -186,36 +194,57 @@ export default {
       });
 
       this.chart.onChartReady(function () {
-        //设置均线种类 均线样式
-        // self.chart.chart().createStudy('Moving Average', false, false, [5], null, {'Plot.color': 'rgb(150, 95, 196)'});
-        // self.chart.chart().createStudy('Moving Average', false, false, [10], null, {'Plot.color': 'rgb(116,149,187)'});
-        // self.chart.chart().createStudy('Moving Average', false, false, [20],null,{"plot.color": "rgb(58,113,74)"});
-        // self.chart.chart().createStudy('Moving Average', false, false, [30],null,{"plot.color": "rgb(118,32,99)"});
-        try {
-          self.chart
-            .chart()
-            .createStudy("Moving Average", !1, !1, [7], null, {});
-          self.chart
-            .chart()
-            .createStudy("Moving Average", !1, !1, [10], null, {});
-          self.chart
-            .chart()
-            .createStudy("Moving Average", !1, !1, [30], null, {});
-          if (self.is_MACD) {
-            self.chart.chart().createStudy("MACD", !1, !1, [20], null, {}); //MACD
-            self.chart
-              .chart()
-              .createStudy(
-                "指数平滑异同移动平均线(MACD_Custom)",
-                false,
-                false,
-                [20],
-                null,
-                {}
-              ); //自定义MACD
-          }
-        } catch (e) {}
+        //检查是否存在MA
+        self.getAllStudiesFun();
       });
+    },
+    //检查是否有 指标MA
+    getAllStudiesFun() {
+      let self = this;
+      let strArr = [];
+      self.chart
+        .activeChart()
+        .getAllStudies()
+        .forEach((e) => {
+          strArr.push(e.name);
+        });
+      if (JSON.stringify(strArr).indexOf("Moving Average") == -1) {
+        //创建指标
+        self.createStudyFun();
+      }
+    },
+    //创建显示指标
+    createStudyFun() {
+      let self = this;
+      //设置均线种类 均线样式
+      // self.chart.chart().createStudy('Moving Average', false, false, [5], null, {'Plot.color': 'rgb(150, 95, 196)'});
+      // self.chart.chart().createStudy('Moving Average', false, false, [10], null, {'Plot.color': 'rgb(116,149,187)'});
+      // self.chart.chart().createStudy('Moving Average', false, false, [20],null,{"plot.color": "rgb(58,113,74)"});
+      // self.chart.chart().createStudy('Moving Average', false, false, [30],null,{"plot.color": "rgb(118,32,99)"});
+      try {
+        self.chart.chart().createStudy("Moving Average", !1, !1, [7], null, {});
+        self.chart
+          .chart()
+          .createStudy("Moving Average", !1, !1, [10], null, {});
+        self.chart
+          .chart()
+          .createStudy("Moving Average", !1, !1, [30], null, {});
+
+        if (self.is_MACD) {
+          self.chart.chart().createStudy("MACD", !1, !1, [20], null, {}); //MACD
+          self.chart
+            .chart()
+            .createStudy(
+              "指数平滑异同移动平均线(MACD_Custom)",
+              false,
+              false,
+              [20],
+              null,
+              {}
+            ); //自定义MACD
+        }
+        // https://aitrade.ga/books/tradingview/book/Chart-Methods.html#setcharttypetype
+      } catch (e) {}
     },
   },
 };

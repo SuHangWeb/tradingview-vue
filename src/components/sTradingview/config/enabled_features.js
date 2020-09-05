@@ -7,6 +7,7 @@ const data = [
     "hide_left_toolbar_by_defaul", //第一次打开图表时隐藏左工具栏
     "side_toolbar_in_fullscreen_mode", //使用此功能，您可以在全屏模式下启用绘图工具栏
     "disable_resolution_rebuild", //显示的时间与得到的数据时间一致
+    "seconds_resolution",//支持秒的周期
     // 'hide_last_na_study_output', // 隐藏指标后面的 n/a
 ]
 

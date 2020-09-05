@@ -68,6 +68,18 @@ const defaults = {
             "mainSeriesProperties.areaStyle.linecolor": this.style.border,
             "mainSeriesProperties.areaStyle.linewidth": 1,
             "mainSeriesProperties.areaStyle.priceSource": "close",
+            // 数据列风格。 请参阅下面的支持的值
+            //  Bars = 0            #美国线
+            //  Candles = 1         #K线图
+            //  Line = 2            #线形图
+            //  Area = 3            #面积图
+            //  Heiken Ashi = 8     #平均K线图
+            //  Hollow Candles = 9  #空心K线图
+            //  Renko = 4           #转形图
+            //  Kagi = 5            #卡吉图
+            //  Point&Figure = 6    #点数图
+            //  Line Break = 7      #新价图
+            "mainSeriesProperties.style": 1
         }
     }
 }
@@ -94,7 +106,18 @@ const data = {
             "paneProperties.horzGridProperties.color": "#344568",
             "paneProperties.crossHairProperties.color": "#58637a",
             "paneProperties.crossHairProperties.style": 2,
-            "mainSeriesProperties.style": 9,
+            // 数据列风格。 请参阅下面的支持的值
+            //  Bars = 0            #美国线
+            //  Candles = 1         #K线图
+            //  Line = 2            #线形图
+            //  Area = 3            #面积图
+            //  Heiken Ashi = 8     #平均K线图
+            //  Hollow Candles = 9  #空心K线图
+            //  Renko = 4           #转形图
+            //  Kagi = 5            #卡吉图
+            //  Point&Figure = 6    #点数图
+            //  Line Break = 7      #新价图
+            "mainSeriesProperties.style": 1,
             "mainSeriesProperties.showCountdown": false,
             "scalesProperties.showSeriesLastValue": true,
             "mainSeriesProperties.visible": false,
@@ -178,7 +201,8 @@ const data = {
             "mainSeriesProperties.areaStyle.linestyle": 0,
             "mainSeriesProperties.areaStyle.linewidth": 1,
             "mainSeriesProperties.areaStyle.priceSource": "close",
-            "mainSeriesProperties.areaStyle.transparency": 80
+            "mainSeriesProperties.areaStyle.transparency": 80,
+
         }
     }
 }
