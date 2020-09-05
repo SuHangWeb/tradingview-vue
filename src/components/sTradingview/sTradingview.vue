@@ -15,8 +15,8 @@
   </div>
 </template>
 <script>
-import { widget } from "@/common/tradingview/charting_library.min.js";
-import datafeeds from "@/common/tradingview/datafees.js";
+import { widget } from "./static/charting_library.min.js";
+import datafeeds from "./static/datafees.js";
 import config from "./config";
 import { webSocketMixin } from "./mixin/webSocket";
 export default {

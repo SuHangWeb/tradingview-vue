@@ -18,6 +18,7 @@
 │   └─studies_overrides.js  柱状图颜色
 ├─mixin                     混入抽离
 │   └─webSocket.js          抽离webSocket方法
+├─static                    主要静态文件
 ├─sTradingview.vue          视图组件
 └─README.md                 说明文档
 ```

@@ -21,7 +21,6 @@
 │  │   ├─images             静态图片存放
 │  │   └─font               字体
 │  ├─common                 共用
-│  │   ├─tradingview        sTradingview 组件主要文件
 │  │   ├─utils              小工具
 │  │   │  ├─canvasFormat.js canvas转换文件工具
 │  │   │  └─index.js        前端js工作集合
