@@ -37,3 +37,13 @@
 | ------ | ---- | ---- | ---- | ---- |
 | wsUrl | 是  |  webSocket 请求地址 （也可以直接写死在子组件内） |  String | - |
 | dom-id | 否  | 如果一个页面调用多个 需要写不同的id值  |  String | - |
+
+
+## 数据 返回 注解
+
+1. time: number UTC 时区的毫秒单位时间戳。time对于日K线的时间应为00:00 UTC(而非交易时段的开始时间)。图表库讲根据商品信息中的交易时段调整时间。每个月K线的时间是该月的第一个交易日，且无时间部分。
+2. open: number K线开盘价
+3. high: number K线最高价
+4. low: number K线最低价
+5. close: number K线收盘价
+6. volume: number K线交易量

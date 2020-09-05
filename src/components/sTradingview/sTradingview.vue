@@ -259,6 +259,10 @@ export default {
                 {}
               ); //自定义MACD
           }
+          //每当十字线位置改变时 触发
+          // self.chart.chart().crossHairMoved((callback) => {
+          //   console.log(callback);
+          // });
         } catch (e) {}
       });
     },
