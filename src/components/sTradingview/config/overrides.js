@@ -107,7 +107,7 @@ const data = {
             editorFontsList: ["Lato", "Arial", "Verdana", "Courier New", "Times New Roman"],
             "paneProperties.topMargin": 5,
             "paneProperties.bottomMargin": 5,
-            "paneProperties.legendProperties.showLegend": false, //收起左上角指标
+            "paneProperties.legendProperties.showLegend": true, //收起左上角指标
             "paneProperties.leftAxisProperties.autoScale": true,
             "paneProperties.leftAxisProperties.autoScaleDisabled": false,
             "paneProperties.leftAxisProperties.percentage": false,
