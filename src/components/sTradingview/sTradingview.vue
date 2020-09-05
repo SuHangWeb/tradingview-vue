@@ -77,6 +77,7 @@ export default {
      * e {string} reset=重置数据
      */
     changeTabs(e) {
+      let self = this;
       this.interval = e;
 
       let chartType = e == "1s" ? 3 : 1;
@@ -84,15 +85,14 @@ export default {
       this.setSymbols();
 
       // if (this.interval != e) {
-        this.chart
-          .chart()
-          .setResolution(this.filter(e), function onReadyCallback(e) {});
+      //   this.chart
+      //     .chart()
+      //     .setResolution(this.filter(e), function onReadyCallback(e) {});
       // }
 
       this.webSocket("load");
 
       this.chart.activeChart().setChartType(chartType);
-
       //MA显示隐藏
       this.toggleStudies(e);
     },
