@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <s-tradingview wsUrl="ws://xxx" class="tradingviewView" />
+    <s-tradingview wsUrl="ws://请求地址" class="tradingviewView" />
   </div>
 </template>
 
