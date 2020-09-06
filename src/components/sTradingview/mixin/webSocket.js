@@ -50,7 +50,7 @@ export const webSocketMixin = {
         websockSend(msg) {
             const self = this;
             if (msg) {
-                if (self.isWebsock) {
+                if (this.isWebsock) {
                     self.websock.send(msg);
                 }
             } else {

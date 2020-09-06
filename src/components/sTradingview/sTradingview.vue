@@ -270,6 +270,10 @@ export default {
         // https://aitrade.ga/books/tradingview/book/Chart-Methods.html#setcharttypetype
       } catch (e) {}
     },
+    //销毁之前
+    beforeDestroy() {
+      this.removeChart();
+    },
   },
 };
 </script>
