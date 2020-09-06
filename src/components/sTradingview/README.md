@@ -25,11 +25,6 @@
 └─README.md                 说明文档
 ```
 
-## 主要文件(根目录)
-
-- public/static/charting_library
-- src/common/tradingview
-
 # 使用方法
 
 ```
