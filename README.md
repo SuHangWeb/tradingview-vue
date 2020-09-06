@@ -1,5 +1,6 @@
 # vue-cli 3.0 模版 vue2.0 & tradingview K线图
 
+[![star](https://gitee.com/SuHangWeb/tradingview-vue/badge/star.svg?theme=dark)](https://gitee.com/SuHangWeb/tradingview-vue/stargazers)
 ---
 
 <img src="https://gitee.com/SuHangWeb/uPic/raw/master/uPic/HnnCSp.png" width="260">

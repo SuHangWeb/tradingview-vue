@@ -1,5 +1,6 @@
 # sTradingview 区块链 K线图（tradingview）
 
+[![star](https://gitee.com/SuHangWeb/tradingview-vue/badge/star.svg?theme=dark)](https://gitee.com/SuHangWeb/tradingview-vue/stargazers)
 ---
 
 <img src="https://gitee.com/SuHangWeb/uPic/raw/master/uPic/HnnCSp.png" width="260">
