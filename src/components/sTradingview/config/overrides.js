@@ -141,7 +141,7 @@ const data = {
             // "paneProperties.legendProperties.showStudyArguments": true,
             "paneProperties.legendProperties.showStudyTitles": true,
             "paneProperties.legendProperties.showStudyValues": true,
-            "paneProperties.legendProperties.showSeriesTitle": true,
+            "paneProperties.legendProperties.showSeriesTitle": false,
             "paneProperties.legendProperties.showSeriesOHLC": true,//开高低
             "scalesProperties.showLeftScale": false,
             "scalesProperties.showRightScale": true,
