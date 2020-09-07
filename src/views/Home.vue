@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <s-tradingview
-      :marketName="marketId"
+      :marketName="marketName"
       :marketId="marketId"
       :wsUrl="wsUrl"
       class="tradingviewView"
