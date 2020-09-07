@@ -16,9 +16,9 @@ import '@/request/mock';
 //移动端适配
 import 'lib-flexible';
 // vant按需引入 & 无需在页面中注册组件 
-import { Uploader, Button, Popup, Icon, Tab, Tabs } from 'vant';
-Vue.use(Uploader).use(Button).use(Popup).use(Icon).use(Tab).use(Tabs);
-//自定义组件无需引入配置
+import { Tab, Tabs, Loading } from 'vant';
+Vue.use(Tab).use(Tabs).use(Loading);
+//自定义组件无需注册组件
 import '@/components/index.js';
 // 去除谷歌浏览器 “passive” 警告
 // import 'default-passive-events';

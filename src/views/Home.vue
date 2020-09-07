@@ -14,7 +14,6 @@ export default {
   name: "home",
   data() {
     return {
-      // ?marketName=BTCUSDT&marketId=26
       marketId: this.$route.query.marketId, 
       marketName: this.$route.query.marketName,
       wsUrl: "ws://请求地址",
