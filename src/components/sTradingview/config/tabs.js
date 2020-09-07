@@ -13,27 +13,27 @@ export default [
     {
         label: "5分钟",
         resolution: "5",
-        websockSend: "5",
+        websockSend: "2",
     },
     {
         label: "15分钟",
         resolution: "15",
-        websockSend: "15",
+        websockSend: "3",
     },
     {
         label: "30分钟",
         resolution: "30",
-        websockSend: "30",
+        websockSend: "4",
     },
     {
         label: "1小时",
         resolution: "60",
-        websockSend: "60",
+        websockSend: "5",
     },
     {
         label: "日线",
         resolution: "1D",
-        websockSend: "1D",
+        websockSend: "6",
     },
     {
         label: "周线",

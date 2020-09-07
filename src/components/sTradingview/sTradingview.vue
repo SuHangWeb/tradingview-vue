@@ -69,8 +69,8 @@ export default {
   data() {
     return {
       tabsArr: tabsConfig,
-      symbol: "LTC_USDT",
-      interval: "1",
+      symbol: "LTC_USDT", //币名称
+      interval: "1", //默认显示规则
       chart: null,
       initdata: {},
       countDate: 0, //累加条数
@@ -93,20 +93,13 @@ export default {
     changeTabs(e) {
       let self = this;
       this.interval = e;
-
       let chartType = e == "1s" ? 3 : 1;
-
       this.setSymbols();
-
-      // if (this.interval != e) {
-      //   this.chart
-      //     .chart()
-      //     .setResolution(this.filter(e), function onReadyCallback(e) {});
-      // }
-
-      this.webSocket("load");
-
       this.chart.activeChart().setChartType(chartType);
+      this.chart
+        .chart()
+        .setResolution(this.filter(e), function onReadyCallback() {});
+      // this.chart.chart().executeActionById("chartReset"); //图表重置
       //MA显示隐藏
       this.toggleStudies(e);
     },
@@ -124,7 +117,9 @@ export default {
       rangeEndDate,
       onLoadedCallback
     ) {
+      this.chart.activeChart().resetData();
       this.onLoadedCallback = onLoadedCallback;
+      console.log(1);
       this.webSocket("load");
     },
 
@@ -136,6 +131,7 @@ export default {
       subscriberUID,
       onResetCacheNeededCallback
     ) {
+      console.log(2);
       this.onRealtimeCallback = onRealtimeCallback;
       this.webSocket("get");
     },
@@ -145,7 +141,7 @@ export default {
       return {
         name: symbol,
         full_name: symbol,
-        timezone: "Asia/Shanghai",
+        timezone: "Asia/Shanghai", //默认时区
         minmov: 1,
         minmov2: 0,
         pointvalue: 1,
@@ -163,6 +159,7 @@ export default {
         pricescale: 100,
         ticker: symbol,
         supported_resolutions: ["1", "5", "15", "30", "60", "1D", "1W", "1M"],
+        seconds_multipliers: ["1S", "5S", "15S"],
       };
     },
 
@@ -190,17 +187,17 @@ export default {
       let self = this;
 
       this.chart = new widget({
-        container_id: self.domId,
+        container_id: self.domId, //`id`属性为指定要包含widget的DOM元素id。
         symbol: self.symbol,
         interval: self.filter(self.interval),
-        locale: "zh",
+        locale: "zh", //  语言
         autosize: true,
         fullscreen: false, //是否占用视图所有空间
         preset: "mobile",
-        toolbar_bg: "#1e2235",
+        toolbar_bg: "#1e2235", //背景色
         datafeed: this.datafeeds,
-        timezone: "Asia/Shanghai",
-        library_path: "/static/charting_library/",
+        timezone: "Asia/Shanghai", //默认时区
+        library_path: "/static/charting_library/", //默认脚本核心文件存储位置
         indicators_file_name: "custom-study(MACD红绿).js",
         drawings_access: {
           type: "black",
@@ -211,6 +208,7 @@ export default {
       });
 
       this.chart.onChartReady(function () {
+        
         //检查是否存在MA
         self.toggleStudies(self.interval);
       });
@@ -281,7 +279,6 @@ export default {
               {}
             ); //自定义MACD
         }
-        // https://aitrade.ga/books/tradingview/book/Chart-Methods.html#setcharttypetype
       } catch (e) {}
     },
     //销毁之前

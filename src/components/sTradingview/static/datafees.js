@@ -82,7 +82,6 @@ class datafeeds {
 	 * @param {*Function} onResetCacheNeededCallback (从1.7开始): 将在bars数据发生变化时执行
 	 */
 	subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscriberUID, onResetCacheNeededCallback) {
-
 		//this.barsUpdater.subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscriberUID, onResetCacheNeededCallback)
 		this.self.subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscriberUID, onResetCacheNeededCallback)
 

@@ -63,7 +63,8 @@ export const webSocketMixin = {
             }
         },
         //错误
-        websockError() {
+        websockError(e) {
+            // console.log(e)
             //   console.log("连接错误");
             this.websockClose();
         },
