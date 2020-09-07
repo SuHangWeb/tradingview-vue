@@ -127,7 +127,7 @@ export default {
       onResetCacheNeededCallback
     ) {
       this.onRealtimeCallback = onRealtimeCallback;
-      this.webSocket("get");
+      // this.webSocket("get");
     },
 
     //获取配置信息
