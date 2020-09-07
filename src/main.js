@@ -15,7 +15,7 @@ Vue.prototype.$http = http;
 import '@/request/mock';
 //移动端适配
 import 'lib-flexible';
-// vant按需引入 & 无需在页面中注册组件 （当前下是 “上传头像组件sUpload” 依赖 如果不需要上传头像 可以移除 更换为 需要的组件）
+// vant按需引入 & 无需在页面中注册组件 
 import { Uploader, Button, Popup, Icon, Tab, Tabs } from 'vant';
 Vue.use(Uploader).use(Button).use(Popup).use(Icon).use(Tab).use(Tabs);
 //自定义组件无需引入配置
