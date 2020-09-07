@@ -44,6 +44,20 @@ export default {
         return "";
       },
     },
+    //参数
+    marketName: {
+      type: String,
+      default: function () {
+        return "";
+      },
+    },
+    // 请求id
+    marketId: {
+      type: String | Number,
+      default: function () {
+        return "";
+      },
+    },
     //是否显示MACD
     is_MACD: {
       type: Boolean,

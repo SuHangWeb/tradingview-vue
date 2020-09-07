@@ -57,7 +57,7 @@ export const webSocketMixin = {
                 self.websock.send(
                     JSON.stringify({
                         req: "contractkline",
-                        sub: `contract:KLineData:BTCUSDT:kline_${$lodash.find(self.tabsArr, { resolution: self.interval }).websockSend}_26`,
+                        sub: `contract:KLineData:${self.marketName}:kline_${$lodash.find(self.tabsArr, { resolution: self.interval }).websockSend}_${self.marketId}`,
                     })
                 );
             }

@@ -1,6 +1,11 @@
 <template>
   <div class="content">
-    <s-tradingview wsUrl="ws://请求地址" class="tradingviewView" />
+    <s-tradingview
+      :marketName="marketId"
+      :marketId="marketId"
+      :wsUrl="wsUrl"
+      class="tradingviewView"
+    />
   </div>
 </template>
 
@@ -8,11 +13,15 @@
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      // ?marketName=BTCUSDT&marketId=26
+      marketId: this.$route.query.marketId, 
+      marketName: this.$route.query.marketName,
+      wsUrl: "ws://请求地址",
+    };
   },
   methods: {},
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 <style lang="scss" scoped>
