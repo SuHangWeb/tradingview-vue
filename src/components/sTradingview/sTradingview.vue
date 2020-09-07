@@ -94,12 +94,8 @@ export default {
       let self = this;
       this.interval = e;
       let chartType = e == "1s" ? 3 : 1;
-      this.setSymbols();
       this.chart.activeChart().setChartType(chartType);
-      this.chart
-        .chart()
-        .setResolution(this.filter(e), function onReadyCallback() {});
-      // this.chart.chart().executeActionById("chartReset"); //图表重置
+      this.setSymbols();
       //MA显示隐藏
       this.toggleStudies(e);
     },
@@ -119,7 +115,6 @@ export default {
     ) {
       this.chart.activeChart().resetData();
       this.onLoadedCallback = onLoadedCallback;
-      console.log(1);
       this.webSocket("load");
     },
 
@@ -131,7 +126,6 @@ export default {
       subscriberUID,
       onResetCacheNeededCallback
     ) {
-      console.log(2);
       this.onRealtimeCallback = onRealtimeCallback;
       this.webSocket("get");
     },
@@ -159,7 +153,7 @@ export default {
         pricescale: 100,
         ticker: symbol,
         supported_resolutions: ["1", "5", "15", "30", "60", "1D", "1W", "1M"],
-        seconds_multipliers: ["1S", "5S", "15S"],
+        // seconds_multipliers: ["1S", "5S", "15S"],
       };
     },
 
@@ -172,6 +166,12 @@ export default {
         self.chart.chart().setVisibleRange(self.initdata);
         self.chart.chart().executeActionById("timeScaleReset");
       });
+      this.chart
+        .chart()
+        .setResolution(
+          self.filter(self.interval),
+          function onReadyCallback() {}
+        );
     },
 
     //卸载K线
@@ -208,7 +208,6 @@ export default {
       });
 
       this.chart.onChartReady(function () {
-        
         //检查是否存在MA
         self.toggleStudies(self.interval);
       });
@@ -289,6 +288,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+/deep/ .van-tabs--line .van-tabs__wrap {
+  height: 100%;
+}
 .sTradingviewContent {
   height: 100%;
   width: 100%;
