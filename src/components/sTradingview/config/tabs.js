@@ -3,7 +3,7 @@ export default [
         label: "分时",
         resolution: "1s",
         chartType: 3,
-        websockSend: "1",
+        websockSend: "0",
     },
     {
         label: "1分钟",

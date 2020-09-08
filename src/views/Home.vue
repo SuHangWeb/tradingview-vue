@@ -15,6 +15,7 @@ export default {
   name: "home",
   data() {
     return {
+     
       marketId: this.$route.query.marketId,
       marketName: this.$route.query.marketName,
       decimal: this.$route.query.decimal,

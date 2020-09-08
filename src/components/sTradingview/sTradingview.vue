@@ -62,7 +62,7 @@ export default {
     decimal: {
       type: String | Number,
       default: function () {
-        return "";
+        return 100;
       },
     },
     //是否显示MACD
@@ -103,13 +103,15 @@ export default {
       let chartType = e == "1s" ? 3 : 1;
       this.chart.activeChart().setChartType(chartType);
       this.setSymbols();
+      this.chart.activeChart().resetData();
+      this.webSocket("load");
       //MA显示隐藏
       this.toggleStudies(e);
     },
 
     //过滤 时段
     filter(time) {
-      return time == "1s" ? "1" : time;
+      return time == "1s" ? "1S" : time;
     },
 
     // 请求数据
@@ -120,9 +122,8 @@ export default {
       rangeEndDate,
       onLoadedCallback
     ) {
-      this.chart.activeChart().resetData();
       this.onLoadedCallback = onLoadedCallback;
-      this.webSocket("load");
+      // this.webSocket("load");
     },
 
     //socket
@@ -173,6 +174,7 @@ export default {
         self.chart.chart().setVisibleRange(self.initdata);
         self.chart.chart().executeActionById("timeScaleReset");
       });
+
       this.chart
         .chart()
         .setResolution(
@@ -192,7 +194,7 @@ export default {
     //加载K线图插件
     loadChart() {
       let self = this;
-
+      this.webSocket("load");
       this.chart = new widget({
         container_id: self.domId, //`id`属性为指定要包含widget的DOM元素id。
         symbol: self.symbol,

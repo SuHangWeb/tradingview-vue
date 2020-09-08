@@ -89,7 +89,7 @@ export const webSocketMixin = {
                 if (!res.hasOwnProperty("pong")) {
                     try {
                         self.onRealtimeCallback({
-                            time: res.Date * 1000,
+                            time: new Date().getTime(),
                             close: res.Close,
                             open: res.Open,
                             high: res.High,
