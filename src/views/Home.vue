@@ -4,6 +4,7 @@
       :marketName="marketName"
       :marketId="marketId"
       :wsUrl="wsUrl"
+      :decimal="decimal"
       class="tradingviewView"
     />
   </div>
@@ -14,8 +15,9 @@ export default {
   name: "home",
   data() {
     return {
-      marketId: this.$route.query.marketId, 
+      marketId: this.$route.query.marketId,
       marketName: this.$route.query.marketName,
+      decimal: this.$route.query.decimal,
       wsUrl: "ws://请求地址",
     };
   },

@@ -58,6 +58,13 @@ export default {
         return "";
       },
     },
+    // 小数值
+    decimal: {
+      type: String | Number,
+      default: function () {
+        return "";
+      },
+    },
     //是否显示MACD
     is_MACD: {
       type: Boolean,
@@ -150,7 +157,7 @@ export default {
         // has_weekly_and_monthly: true,
         description: symbol,
         //设置精度  100表示保留两位小数   1000三位   10000四位
-        pricescale: 100,
+        pricescale: parseInt(this.decimal),
         ticker: symbol,
         supported_resolutions: ["1", "5", "15", "30", "60", "1D", "1W", "1M"],
         // seconds_multipliers: ["1S", "5S", "15S"],
