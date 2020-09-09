@@ -39,7 +39,10 @@ export const webSocketMixin = {
         //链接状态
         websockOpen(e) {
             const self = this;
-            //   console.log("socket连接成功");
+            // console.log("socket连接成功");
+            if (this.websockTime) {
+                clearInterval(this.websockTime);
+            }
             this.isWebsock = true;
             this.websockSend();
             setTimeout(function () {
