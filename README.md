@@ -31,7 +31,8 @@
 │  │   │  ├─canvasFormat.js canvas转换文件工具
 │  │   │  └─index.js        前端js工作集合
 │  ├─components 	        组件目录
-│  │   ├─sTradingview       tradingview K线图组件
+│  │   ├─sTradingview       tradingview K线图组件 （移动端）
+│  │   ├─sTradingviewPc     tradingview K线图组件 （PC端）
 │  │   └─index.js           配置页面无需注册自定义组件
 │  ├─request			    请求
 │  │   ├─api                接口目录
