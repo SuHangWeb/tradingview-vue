@@ -1,6 +1,15 @@
 <template>
   <div class="content">
-    <s-tradingview
+    <!-- 移动端 -->
+    <!-- <s-tradingview
+      :marketName="marketName"
+      :marketId="marketId"
+      :wsUrl="wsUrl"
+      :decimal="decimal"
+      class="tradingviewView"
+    /> -->
+    <!-- pc端 -->
+    <s-tradingview-pc
       :marketName="marketName"
       :marketId="marketId"
       :wsUrl="wsUrl"

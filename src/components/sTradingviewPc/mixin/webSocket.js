@@ -91,9 +91,7 @@ export const webSocketMixin = {
                         volume: Number(item.Volume),
                     });
                 });
-                self.$nextTick(() => {
-                    self.onLoadedCallback(arrayData);
-                })
+                self.onLoadedCallback(arrayData);
             } else {
                 if (!res.hasOwnProperty("pong")) {
                     try {

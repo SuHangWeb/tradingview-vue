@@ -2,10 +2,15 @@
 
 [![star](https://gitee.com/SuHangWeb/tradingview-vue/badge/star.svg?theme=dark)](https://gitee.com/SuHangWeb/tradingview-vue/stargazers)
 ---
+## 移动端
 
 <img src="https://gitee.com/SuHangWeb/uPic/raw/master/uPic/HnnCSp.png" width="260">
 <img src="https://gitee.com/SuHangWeb/uPic/raw/master/uPic/QBMRz9.png" width="260">
 <img src="https://gitee.com/SuHangWeb/uPic/raw/master/uPic/5fnOdH.png" width="260">
+
+## PC端
+
+![yhucSp](https://gitee.com/SuHangWeb/uPic/raw/master/uPic/yhucSp.png)
 
 ## 目录
 
