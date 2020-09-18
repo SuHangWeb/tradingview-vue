@@ -126,7 +126,7 @@ const data = {
             "mainSeriesProperties.lockScale": false,
             "mainSeriesProperties.minTick": "default",
             "mainSeriesProperties.extendedHours": false,
-            "volumePaneSize": "tiny",//底部视图大小
+            "volumePaneSize": "tiny",//底部视图大小 支持的值: large, medium, small, tiny
             editorFontsList: ["Lato", "Arial", "Verdana", "Courier New", "Times New Roman"],
             "paneProperties.topMargin": 5,
             "paneProperties.bottomMargin": 5,

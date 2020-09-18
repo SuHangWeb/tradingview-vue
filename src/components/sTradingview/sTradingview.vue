@@ -150,7 +150,7 @@ export default {
         fractional: false,
         //设置周期 等于所有时间都是交易时段
         session: "24x7",
-        has_intraday: true,
+        has_intraday: true, //布尔值显示商品是否具有日内（分钟）历史数据
         has_no_volume: false,
         //设置是否支持周月线
         has_daily: true,
@@ -162,6 +162,8 @@ export default {
         ticker: symbol,
         supported_resolutions: ["1", "5", "15", "30", "60", "1D", "1W", "1M"],
         // seconds_multipliers: ["1S", "5S", "15S"],
+        // volume_precision: 0, //整数显示此商品的成交量数字的小数位。0表示只显示整数。1表示保留小数位的1个数字字符
+        // data_status: "streaming", //数据状态(streaming(实时),endofday(已收盘),pulsed(脉冲),delayed_streaming(延迟流动中))
       };
     },
 

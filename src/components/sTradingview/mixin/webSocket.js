@@ -58,9 +58,13 @@ export const webSocketMixin = {
                 }
             } else {
                 self.websock.send(
+                    // JSON.stringify({
+                    //     req: "contractkline",
+                    //     sub: `contract:KLineData:${self.marketName}:kline_${$lodash.find(self.tabsArr, { resolution: self.interval }).websockSend}_${self.marketId}`,
+                    // })
                     JSON.stringify({
-                        req: "contractkline",
-                        sub: `contract:KLineData:${self.marketName}:kline_${$lodash.find(self.tabsArr, { resolution: self.interval }).websockSend}_${self.marketId}`,
+                        req: "currency",
+                        sub: `trade:kline:KLineData_kline_${$lodash.find(self.tabsArr, { resolution: self.interval }).websockSend}_${self.marketId}`,
                     })
                 );
             }
@@ -79,12 +83,12 @@ export const webSocketMixin = {
                 let arrayData = [];
                 res.map((item) => {
                     arrayData.push({
-                        time: item.Date * 1000,
-                        close: item.Close,
-                        open: item.Open,
-                        high: item.High,
-                        low: item.Low,
-                        volume: item.Volume,
+                        time: Number(item.Date * 1000),
+                        close: Number(item.Close),
+                        open: Number(item.Open),
+                        high: Number(item.High),
+                        low: Number(item.Low),
+                        volume: Number(item.Volume),
                     });
                 });
                 self.onLoadedCallback(arrayData);
@@ -92,13 +96,12 @@ export const webSocketMixin = {
                 if (!res.hasOwnProperty("pong")) {
                     try {
                         self.onRealtimeCallback({
-                            time: res.Date * 1000,
-                            // time: new Date().getTime(),
-                            close: res.Close,
-                            open: res.Open,
-                            high: res.High,
-                            low: res.Low,
-                            volume: res.Volume,
+                            time: Number(res.Date * 1000),
+                            close: Number(res.Close),
+                            open: Number(res.Open),
+                            high: Number(res.High),
+                            low: Number(res.Low),
+                            volume: Number(res.Volume),
                         });
                     } catch (e) { }
                 }
